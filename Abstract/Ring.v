@@ -1,5 +1,6 @@
 Require Import
   Technology.Setoid
+  Technology.Nonzero
   Abstract.Magma
   Abstract.Abelian
   Abstract.Semigroup

@@ -1,5 +1,5 @@
-Require Import Equivalence Relation_Definitions Setoid.
-Require Export Morphisms.
+Require Import Equivalence Relation_Definitions.
+Require Export Morphisms Setoid.
 
 Record Setoid: Type := {
   car : Type;
