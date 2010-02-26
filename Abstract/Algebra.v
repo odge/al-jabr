@@ -1,6 +1,9 @@
 Require Import
   Technology.FirstClassSetoid.
 
+Delimit Scope algebra_scope with algebra.
+Open Scope algebra_scope.
+
 Inductive Tag : Set := Additive | Multiplicative.
 
 Class Magma (tag : Tag) (S : Setoid) := {
@@ -8,9 +11,9 @@ Class Magma (tag : Tag) (S : Setoid) := {
   operationRespectful : Proper (eq S ==> eq S ==> eq S) operation
 }.
 
-Infix "&" := operation (at level 50, no associativity).
-Infix "(+)" := (@operation Additive _ _) (at level 50, no associativity).
-Infix "(x)" := (@operation Multiplicative _ _) (at level 40, no associativity).
+Infix "&" := operation (at level 50, no associativity) : algebra_scope.
+Infix "(+)" := (@operation Additive _ _) (at level 50, no associativity) : algebra_scope.
+Infix "(x)" := (@operation Multiplicative _ _) (at level 40, no associativity) : algebra_scope.
 
 Add Parametric Morphism (tag : Tag) (S : Setoid) `(m : Magma tag S) : operation with 
 signature eq S ==> eq S ==> eq S as operation_mor.
@@ -49,8 +52,8 @@ Class Monoid `(M : Magma) := {
   rightIdentity : forall x, x & identity == x
 }.
 
-Notation "'zero'" := (@identity Additive _ _ _).
-Notation "'one'" := (@identity Multiplicative _ _ _).
+Notation "'zero'" := (@identity Additive _ _ _) : algebra_scope.
+Notation "'one'" := (@identity Multiplicative _ _ _) : algebra_scope.
 
 (** tests **
 
@@ -63,4 +66,29 @@ reflexivity.
 Qed.
 
 ** **)
+
+Class Group (tag : Tag) (S : Setoid) `(M : Magma tag S) `(Sem : @Semigroup tag S M) `(Mo : @Monoid tag S M) := {
+  invert : S -> S ;
+  invertRespectful : Proper (eq S ==> eq S) invert ;
+  leftInverse : forall x, invert x & x == identity ;
+  rightInverse : forall x, x & invert x == identity
+}.
+
+Notation "x '''" := (@invert _ _ _ _ _ _ x) (at level 40, no associativity) : algebra_scope.
+
+Add Parametric Morphism (tag : Tag) (S : Setoid) `(m : Group tag S) : invert with 
+signature eq S ==> eq S as invert_mor.
+Proof. apply invertRespectful. Qed.
+
+(** tests
+
+Theorem group_test `(G : Group) :
+  forall x,
+    x & x ' == identity.
+intros.
+rewrite rightInverse.
+reflexivity.
+Qed.
+
+**)
 
