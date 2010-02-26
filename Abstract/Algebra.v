@@ -239,3 +239,21 @@ Class Integral `(R : Ring) := {
     a (x) b == zero -> a == zero \/ b == zero
 }.
 
+Theorem integral_left_cancellation `(I : Integral) : forall k a b,
+  k # zero -> k (x) a == k (x) b -> a == b.
+Proof.
+  intros k a b.
+  intros kNonzero Q.
+  assert (k (x) a (+) (k (x) b) ' == zero) as Q'.
+  rewrite Q.
+  rewrite rightInverse.
+  reflexivity.
+  rewrite <- ring_negate_bubble_right in Q'; try assumption. (** not good!! **)
+  rewrite <- leftDistributivity in Q'.
+  destruct (noZeroDivisors _ _ Q') as [|N].
+  pose (nonequal _ _ _ kNonzero).
+  contradiction.
+  destruct (group_unique_inverses _ _ _ N) as [N' N''].
+  rewrite group_inverse_inverse in N'.
+  assumption.
+Qed.

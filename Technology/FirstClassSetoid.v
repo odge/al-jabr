@@ -7,7 +7,8 @@ Record Setoid : Type := {
   apart : car -> car -> Prop ;
   refl : reflexive _ eq ;
   sym : symmetric _ eq ;
-  trans : transitive _ eq
+  trans : transitive _ eq ;
+  nonequal : forall x y, apart x y -> ~ eq x y
 }.
 
 Notation "x == y" := (eq _ x y) (at level 70, no associativity).
