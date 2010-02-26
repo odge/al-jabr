@@ -92,3 +92,19 @@ Qed.
 
 **)
 
+Class Ring (S : Setoid) `(Add : Magma Additive S) `(Mul : Magma Multiplicative S)
+  (AddSem : @Semigroup _ _ Add) (MulSem : @Semigroup _ _ Mul)
+  (AddMon : @Monoid _ _ Add) (MulMon : @Monoid _ _ Mul)
+  (AddGrp : @Group _ _ Add AddSem AddMon) := {
+  leftDistributivity : forall k a b,
+    k (x) (a (+) b) == (k (x) a) (+) (k (x) b) ;
+  rightDistributivity : forall k a b,
+    (a (+) b) (x) k == (a (x) k) (+) (b (x) k)
+}.
+
+Class Integral `(R : Ring) := {
+  nonDegernerate : one # zero ;
+  noZeroDivisors : forall a b,
+    a (x) b == zero -> a == zero \/ b == zero
+}.
+
