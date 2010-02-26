@@ -1,1 +1,0 @@
-This subsection defines various abstract algebraic structures as named typeclasses. In comments proof obligations are expressed, we only instantiate a class if it satisfies these.

@@ -1,1 +1,0 @@
-coq_makefile */*.v COQC = coqc -R Technology Technology -R Abstract Abstract > Makefile ; rm .depend ; touch .depend ; make clean ; make depend
