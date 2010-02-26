@@ -1,6 +1,11 @@
 Require Import
  Technology.Setoid.
 
+
+
+
+
+
 Section Magma.
 
 Variable S : Setoid.
@@ -11,12 +16,22 @@ Class Magma
     operationRespectful : Proper (eq S ==> eq S ==> eq S) operation
   }.
 
-Add Parametric Morphism (Mag : Magma) : operation with 
-signature eq S ==> eq S ==> eq S as operation_mor.
-Proof. apply operationRespectful. Qed.
-
 End Magma.
 
+Add Parametric Morphism (S : Setoid) `(Mag : Magma S) : operation with 
+signature eq S ==> eq S ==> eq S as operation_mor.
+Proof. apply operationRespectful.
+       assumption.
+Qed.
+(*
+Lemma test (S : Setoid) `(M : Magma S) :
+  forall x y,
+    x == y -> operation x y == operation y x.
+Proof.
+intros.
+rewrite H.
+Qed.
+*)
 
 Section Abelian_and_Semigroup.
 
@@ -55,22 +70,23 @@ Class Monoid
     rightIdentity : forall x, x & e == x
   }.
 
-Variable inverse : car S -> car S.
+Variable inverse' : car S -> car S.
 
 Class Group
   : Prop := {
-    inverseRespectful : Proper (eq S ==> eq S) inverse ;
-    leftInverse : forall x, inverse x & x == e ;
-    rightInverse : forall x, x & inverse x == e
+    inverseRespectful : Proper (eq S ==> eq S) inverse' ;
+    leftInverse : forall x, inverse' x & x == e ;
+    rightInverse : forall x, x & inverse' x == e
   }.
-
-Add Parametric Morphism (Grp : Group) : inverse with 
-signature eq S ==> eq S as inverse_mor.
-Proof. apply inverseRespectful. Qed.
 
 End Monoid_and_Group.
 
-
+Add Parametric Morphism (S : Setoid) `(Grp : Group S) : inverse' with 
+signature eq S ==> eq S as inverse_mor.
+Proof.
+  eapply inverseRespectful.
+  apply Grp.
+Qed.
 
 Section Ring_and_Integral.
 
@@ -106,6 +122,25 @@ Class Integral
     noZeroDivisors : forall p q, p (x) q == zero -> p == zero \/ q == zero
   }.
 
+End Ring_and_Integral.
+
+Theorem left_cancellation (S : Setoid) `(Int : Integral S) `(Grp : Group S) : forall k x y,
+  k # zero -> mul k x == mul k y -> x == y.
+Proof.
+  intros.
+  rename operation into add.
+rename inverse' into neg.
+
+  assert (add (mul k (neg y)) (mul k y) == add (neg (mul k y)) (mul k y)).
+
+rewrite leftInverse with (e := True).
+
+
+Print Group.
+
+
+
+
 Theorem left_cancellation : forall k x y,
   k # zero -> k (x) x == k (x) y -> x == y.
 Proof.
@@ -114,8 +149,8 @@ Proof.
 assert (k (x) neg y == neg (k (x) y)).
 assert (k (x) neg y (+) k (x) y == neg (k (x) y) (+) k (x) y).
 rewrite leftInverse.
+
 (** this is bad because you have to write out the group name ***)
 
 Admitted.
 
-End Ring_and_Integral.

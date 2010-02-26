@@ -9,18 +9,6 @@ Class Monoid `{s : Semigroup} := {
   rightIdentity : forall a, a & identity == a
 }.
 
-Class MultiplicativeMonoid `(Monoid) := {}.
-Class AdditiveMonoid `(Monoid) := {}.
+Notation "'zero'" := (@identity Additive _ _ _ _).
+Notation "'one'" := (@identity Multiplicative _ _ _ _).
 
-Definition getMultiplicative' `(MultiplicativeMonoid) : Monoid.
-intros.
-assumption.
-Defined.
-
-Definition getAdditive' `(AdditiveMonoid) : Monoid.
-intros.
-assumption.
-Defined.
-
-Notation "'zero'" := (@identity _ (getAdditive _) _ _).
-Notation "'one'" := (@identity _ (getMultiplicative _) _ _).

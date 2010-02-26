@@ -1,7 +1,9 @@
 Require Import
   Technology.Setoid.
 
-Class Magma (M : Setoid) := {
+Inductive Tag := Additive | Multiplicative.
+
+Class Magma (tag : Tag) (M : Setoid) := {
   operation : car M -> car M -> car M ;
   operationRespectful : Proper (eq M ==> eq M ==> eq M) operation
 }.
@@ -15,25 +17,15 @@ Proof. apply operationRespectful. Qed.
 
 Lemma magma_morph_test `{m : Magma} : forall x y a,
   x == y -> a&x == a&y.
-intros M m x y a Q; rewrite Q; reflexivity.
+intros tag M m x y a Q.
+rewrite Q; reflexivity.
 Qed.
 
 (************)
 
-Class MultiplicativeMagma `(Magma) := {}.
-Class AdditiveMagma `(Magma) := {}.
+Notation "x (+) y" := (@operation Additive _ _ x y) (at level 50, no associativity).
+Notation "x '(x)' y" := (@operation Multiplicative _ _ x y) (at level 40, no associativity).
 
-Definition getMultiplicative `(MultiplicativeMagma) : Magma M.
-intros.
-assumption.
-Defined.
+Definition mul_add_test `(m : Magma Additive) `(m' : Magma Multiplicative M) x y := x (+) y (x) x.
 
-Definition getAdditive `(AdditiveMagma) : Magma M.
-intros.
-assumption.
-Defined.
 
-Notation "x (+) y" := (@operation _ (getAdditive _) x y) (at level 50, no associativity).
-Notation "x '(x)' y" := (@operation _ (getMultiplicative _) x y) (at level 40, no associativity).
-
-Definition mul_add_test `(m : AdditiveMagma) `(m' : MultiplicativeMagma M) x y := x (+) y (x) x.

@@ -18,7 +18,7 @@ Theorem leftCancellation `(i : IntegralDomain) : forall k a b,
 Proof.
 intros.
 assert (k (x) a (+) inverse (k (x) b) == zero).
-rewrite H2.
+rewrite H0.
 apply rightInverse.
 assert (k (x) a (+) k (x) inverse b == zero).
 admit.
