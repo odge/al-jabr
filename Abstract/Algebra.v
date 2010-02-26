@@ -1,6 +1,8 @@
 Require Import
   Technology.FirstClassSetoid.
 
+Set Automatic Introduction.
+
 Delimit Scope algebra_scope with algebra.
 Open Scope algebra_scope.
 
@@ -80,6 +82,8 @@ Add Parametric Morphism (tag : Tag) (S : Setoid) `(m : Group tag S) : invert wit
 signature eq S ==> eq S as invert_mor.
 Proof. apply invertRespectful. Qed.
 
+Ltac Group_intros Name := intros tag S M Sem Mo Name.
+
 (** tests
 
 Theorem group_test `(G : Group) :
@@ -107,4 +111,3 @@ Class Integral `(R : Ring) := {
   noZeroDivisors : forall a b,
     a (x) b == zero -> a == zero \/ b == zero
 }.
-
