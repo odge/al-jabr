@@ -76,7 +76,7 @@ Class Group (tag : Tag) (S : Setoid) `(M : Magma tag S) `(Sem : @Semigroup tag S
   rightInverse : forall x, x & invert x == identity
 }.
 
-Notation "x '''" := (@invert _ _ _ _ _ _ x) (at level 40, no associativity) : algebra_scope.
+Notation "x '''" := (@invert _ _ _ _ _ _ x) (at level 30, no associativity) : algebra_scope.
 
 Add Parametric Morphism (tag : Tag) (S : Setoid) `(m : Group tag S) : invert with 
 signature eq S ==> eq S as invert_mor.
@@ -175,7 +175,6 @@ Proof.
   symmetry; assumption.
 Qed.
 
-
 (** tests
 
 Theorem group_test `(G : Group) :
@@ -198,8 +197,45 @@ Class Ring (S : Setoid) `(Add : Magma Additive S) `(Mul : Magma Multiplicative S
     (a (+) b) (x) k == (a (x) k) (+) (b (x) k)
 }.
 
+Lemma ring_zero_absorbs_right `(R : Ring) : forall x,
+  x (x) zero == zero.
+Proof. (* x*0=x*0+((x*0)+-(x*0))=x*(0+0)*-x*0=x*0+-x*0=0 *)
+  intros x.
+  assert (x(x)zero == x(x)zero (+) x(x)zero (+) (x(x)zero)') as Q.
+  rewrite <- associativity.
+  rewrite rightInverse.
+  rewrite rightIdentity.
+  reflexivity.
+  rewrite Q.
+  rewrite <- leftDistributivity.
+  rewrite leftIdentity.
+  rewrite rightInverse.
+  reflexivity.
+Qed.  
+
+Theorem ring_negate_bubble_right `(R : Ring) : forall a b,
+  a (x) b ' == (a (x) b) '.
+Proof. (* 0 = a(0) = a(b+(-b)) = ab + a(-b) ==> ab = -a(-b) ==> -ab = --a(-b) = a(-b) *)
+  intros.
+  assert (zero == a (x) b (+) a (x) b ') as Q.
+  rewrite <- leftDistributivity.
+  rewrite rightInverse.
+  rewrite ring_zero_absorbs_right.
+  reflexivity.
+  assumption. (** This goal is bad news! **)
+  assert ((a(x)b)'(+)zero == (a(x)b)'(+)a(x)b(+)a(x)b ') as Q'.
+  rewrite Q.
+  rewrite associativity.
+  reflexivity.
+  rewrite leftInverse in Q'.
+  rewrite leftIdentity in Q'.
+  rewrite rightIdentity in Q'.
+  symmetry; assumption.
+Qed.
+
 Class Integral `(R : Ring) := {
   nonDegernerate : one # zero ;
   noZeroDivisors : forall a b,
     a (x) b == zero -> a == zero \/ b == zero
 }.
+
