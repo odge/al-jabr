@@ -267,3 +267,12 @@ Proof.
   rewrite group_inverse_inverse in N'.
   assumption.
 Qed.
+
+Class Field S `(R : Ring S) `(AddAbl : @Abelian _ _ Add) `(MulAbl : @Abelian _ _ Mul) := {
+  nonDegernerate' : one # zero ;
+  reciprocal : forall a, a # zero -> S ;
+  reciprocalLeftInverse : forall a (prf : a # zero),
+    reciprocal a prf * a == one ;
+  reciprocalRightInverse : forall a (prf : a # zero),
+    a * reciprocal a prf == one
+}.
