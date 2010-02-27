@@ -23,7 +23,7 @@ Definition int := (nat * nat)% type.
 Definition int_equal (p q : int) :=
   let (u,v) := p in
   let (x,y) := q in
-(* u - v = x - y  <=> *)  u + y = x + v.
+(* u - v = x - y  <=> *) (u + y = x + v)%nat.
 
 Program Definition Z : Setoid := Build_Setoid int int_equal (fun x y => ~ int_equal x y) _ _ _ _.
 Next Obligation.
@@ -51,9 +51,9 @@ rename n3 into e.
 rename n4 into f.
 
 intros Q1 Q2.
-assert ((a + d) + (c + f) = (c + b) + (e + d)) as Q' by (rewrite Q1; rewrite Q2; reflexivity).
+assert (((a + d) + (c + f) = (c + b) + (e + d))%nat) as Q' by (rewrite Q1; rewrite Q2; reflexivity).
 repeat rewrite plus_assoc in Q'.
-cut ((d + c) + (a + f) = (d + c) + (e + b)).
+cut (((d + c) + (a + f) = (d + c) + (e + b))%nat).
 apply plus_reg_l.
 clear Q1; clear Q2.
 rewrite plus_permute.
@@ -69,7 +69,7 @@ Program Definition Quot {S : Setoid} `(I : Integral S) (AddAbl : @Abelian _ _ Ad
     let (p,q) := x in
     let (u,v) := y in
       (* p/q = u/v  <=>  pv = uq *)
-      p (x) v == u (x) q
+      p * v == u * q
       in
   Build_Setoid
     ({ (x, y) : S * S | y # zero })
@@ -124,3 +124,4 @@ repeat rewrite <- associativity.
 
 reflexivity.
 Qed.
+
