@@ -14,8 +14,8 @@ Class Magma (tag : Tag) (S : Setoid) := {
 }.
 
 Infix "&" := operation (at level 50, no associativity) : algebra_scope.
-Infix "(+)" := (@operation Additive _ _) (at level 50, no associativity) : algebra_scope.
-Infix "(x)" := (@operation Multiplicative _ _) (at level 40, no associativity) : algebra_scope.
+Infix "+" := (@operation Additive _ _) : algebra_scope.
+Infix "*" := (@operation Multiplicative _ _) : algebra_scope.
 
 Add Parametric Morphism (tag : Tag) (S : Setoid) `(m : Magma tag S) : operation with 
 signature eq S ==> eq S ==> eq S as operation_mor.
@@ -192,16 +192,16 @@ Class Ring (S : Setoid) `(Add : Magma Additive S) `(Mul : Magma Multiplicative S
   (AddMon : @Monoid _ _ Add) (MulMon : @Monoid _ _ Mul)
   (AddGrp : @Group _ _ Add AddSem AddMon) := {
   leftDistributivity : forall k a b,
-    k (x) (a (+) b) == (k (x) a) (+) (k (x) b) ;
+    k * (a + b) == k * a + k * b ;
   rightDistributivity : forall k a b,
-    (a (+) b) (x) k == (a (x) k) (+) (b (x) k)
+    (a + b) * k == a * k + b * k
 }.
 
 Lemma ring_zero_absorbs_right `(R : Ring) : forall x,
-  x (x) zero == zero.
+  x * zero == zero.
 Proof. (* x*0=x*0+((x*0)+-(x*0))=x*(0+0)*-x*0=x*0+-x*0=0 *)
   intros x.
-  assert (x(x)zero == x(x)zero (+) x(x)zero (+) (x(x)zero)') as Q.
+  assert (x*zero == x*zero + x*zero + (x*zero)') as Q.
   rewrite <- associativity.
   rewrite rightInverse.
   rewrite rightIdentity.
@@ -211,19 +211,29 @@ Proof. (* x*0=x*0+((x*0)+-(x*0))=x*(0+0)*-x*0=x*0+-x*0=0 *)
   rewrite leftIdentity.
   rewrite rightInverse.
   reflexivity.
-Qed.  
+Qed.
+
+Lemma ring_zero_absorbant_right `(R : Ring) :
+  forall a, a * zero == zero.
+Proof.
+  intro a.
+  assert (a + zero == a) as Q by (rewrite rightIdentity; reflexivity).
+  assert (a * (a + zero) == a * a) as Q' by (rewrite Q; reflexivity).
+  rewrite leftDistributivity in Q'.
+  exact (group_unique_identity_right _ _ _ Q').
+Qed.
 
 Theorem ring_negate_bubble_right `(R : Ring) : forall a b,
-  a (x) b ' == (a (x) b) '.
+  a * b ' == (a * b) '.
 Proof. (* 0 = a(0) = a(b+(-b)) = ab + a(-b) ==> ab = -a(-b) ==> -ab = --a(-b) = a(-b) *)
   intros.
-  assert (zero == a (x) b (+) a (x) b ') as Q.
+  assert (zero == a * b + a * b ') as Q.
   rewrite <- leftDistributivity.
   rewrite rightInverse.
   rewrite ring_zero_absorbs_right.
   reflexivity.
   assumption. (** This goal is bad news! **)
-  assert ((a(x)b)'(+)zero == (a(x)b)'(+)a(x)b(+)a(x)b ') as Q'.
+  assert ((a*b)'+zero == (a*b)'+a*b+a*b ') as Q'.
   rewrite Q.
   rewrite associativity.
   reflexivity.
@@ -236,15 +246,15 @@ Qed.
 Class Integral `(R : Ring) := {
   nonDegernerate : one # zero ;
   noZeroDivisors : forall a b,
-    a (x) b == zero -> a == zero \/ b == zero
+    a * b == zero -> a == zero \/ b == zero
 }.
 
 Theorem integral_left_cancellation `(I : Integral) : forall k a b,
-  k # zero -> k (x) a == k (x) b -> a == b.
+  k # zero -> k * a == k * b -> a == b.
 Proof.
   intros k a b.
   intros kNonzero Q.
-  assert (k (x) a (+) (k (x) b) ' == zero) as Q'.
+  assert (k * a + (k * b) ' == zero) as Q'.
   rewrite Q.
   rewrite rightInverse.
   reflexivity.
