@@ -62,8 +62,9 @@ rewrite Q'.
 ring.
 Qed.
 
+Require Import Program.
 
-Program Definition Quot {S : Setoid} `(I : Integral S) : Setoid :=
+Program Definition Quot {S : Setoid} `(I : Integral S) (AddAbl : @Abelian _ _ Add) (MulAbl : @Abelian _ _ Mul) : Setoid :=
   let quot_eq := fun (x y : S * S) =>
     let (p,q) := x in
     let (u,v) := y in
@@ -71,7 +72,7 @@ Program Definition Quot {S : Setoid} `(I : Integral S) : Setoid :=
       p (x) v == u (x) q
       in
   Build_Setoid
-    (S * S)
+    ({ (x, y) : S * S | y # zero })
     quot_eq
     (fun x y => ~ quot_eq x y)
     _
@@ -80,32 +81,46 @@ Program Definition Quot {S : Setoid} `(I : Integral S) : Setoid :=
     _.
 Next Obligation.
 unfold reflexive.
-destruct x.
+destruct x as [[p q] xPrf].
+simpl.
 reflexivity.
 Qed.
 Next Obligation.
 unfold symmetric.
-destruct x; destruct y.
+destruct x as [[p q] xPrf]; destruct y as [[u v] yPrf].
+simpl.
 intro; symmetry; congruence.
 Qed.
 Next Obligation.
 unfold transitive.
-destruct x; destruct y; destruct z.
+destruct x as [[p q] xPrf]; destruct y as [[u v] yPrf]; destruct z as [[m n] zPrf].
+simpl.
 intros Q Q'.
 
-rename c into a.
-rename c0 into b.
-rename c1 into c.
-rename c2 into d.
-rename c3 into e.
-rename c4 into f.
+pose (fun a b => integral_left_cancellation _ _ a b xPrf) as x.
+pose (fun a b => integral_left_cancellation _ _ a b yPrf) as y.
+pose (fun a b => integral_left_cancellation _ _ a b zPrf) as z.
 
-assert ((a(x)d)(x)(c(x)f) == (c(x)b)(x)(e(x)d)) as Q'' by (rewrite Q; rewrite Q'; reflexivity).
-assert ((c(x)b)(x)(e(x)d) == c(x)((b(x)e)(x)d)) as RHS.
-repeat rewrite associativity; reflexivity.
-assert ((a(x)d)(x)(c(x)f) == c(x)((a(x)f)(x)d)) as LHS.
-admit.
+apply x; apply y; apply z.
 
-rewrite LHS in Q''; rewrite RHS in Q''.
-pose (integral_left_cancellation _ _ _ _ _ Q'').
+rewrite (@commutativity Multiplicative _ _ _ p).
+repeat rewrite <- associativity.
+rewrite (@commutativity Multiplicative _ _ _ v).
+repeat rewrite <- associativity.
+rewrite Q.
 
+rewrite (@commutativity Multiplicative _ _ _ m).
+repeat rewrite <- associativity.
+rewrite (@commutativity Multiplicative _ _ _ v).
+repeat rewrite <- associativity.
+rewrite <- Q'.
+
+repeat rewrite (@commutativity Multiplicative _ _ _ n).
+repeat rewrite <- associativity.
+repeat rewrite (@commutativity Multiplicative _ _ _ q).
+repeat rewrite <- associativity.
+repeat rewrite (@commutativity Multiplicative _ _ _ u).
+repeat rewrite <- associativity.
+
+reflexivity.
+Qed.
