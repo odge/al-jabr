@@ -17,4 +17,3 @@ Next Obligation.
 unfold transitive.
 congruence.
 Defined.
-

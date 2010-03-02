@@ -36,3 +36,8 @@ Proof.
   rewrite group_inverse_inverse in N'.
   assumption.
 Qed.
+
+Definition Irreducible {S} `(I : Integral S) : S -> Prop :=
+  fun r =>
+    forall a b,
+      r == a * b -> Unit _ a \/ Unit _ b.

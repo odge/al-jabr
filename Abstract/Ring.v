@@ -21,6 +21,16 @@ Class Ring (S : Setoid) `(Add : Magma Additive S) `(Mul : Magma Multiplicative S
     (a + b) * k == a * k + b * k
 }.
 
+(* A unit is an element that has a multiplicative inverse *)
+Definition Unit {S} `(R : Ring S) : S -> Prop :=
+  fun a =>
+    exists b,
+      a * b == one.
+
+Theorem ring_Unit_one `{R : Ring} : Unit R one.
+exists one; rewrite leftIdentity; reflexivity.
+Qed.
+
 Lemma ring_zero_absorbs_right `(R : Ring) : forall x,
   x * zero == zero.
 Proof. (* x*0=x*0+((x*0)+-(x*0))=x*(0+0)*-x*0=x*0+-x*0=0 *)
