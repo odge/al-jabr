@@ -1,5 +1,6 @@
 Require Import
  Technology.FirstClassSetoid
+ Technology.Tag
  Abstract.Algebra.
 
 Require Import Arith.
@@ -65,6 +66,3 @@ repeat rewrite <- associativity.
 
 reflexivity.
 Qed.
-
-
-
