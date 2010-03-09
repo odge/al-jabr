@@ -1,3 +1,6 @@
+(** Following www.stanford.edu/~dgleich/publications/finite-calculus.pdf **)
+(* (except for there's a minor twiddle when it comes do the FTFC) *)
+
 Require Import ZArith.
 Open Local Scope Z_scope.
 
@@ -10,11 +13,30 @@ Proof.
   ring.
 Qed.
 
+Theorem dd_Scalar_Law k f x : ∆ (fun x => k * f x) x = k * ∆ f x.
+Proof.
+  unfold DiscreteDerivative; intros.
+  ring.
+Qed.
+
+Theorem dd_Sum_Law f g x : ∆ (fun x => f x + g x) x = ∆ f x + ∆ g x.
+Proof.
+  unfold DiscreteDerivative; intros.
+  ring.
+Qed.
+
+Theorem dd_Product_Law f g x : ∆ (fun x => f x * g x) x = f x * ∆ g x + g (x + 1) * ∆ f x.
+Proof.
+  unfold DiscreteDerivative; intros.
+  ring.
+Qed.
+
 Fact dd_x_x1 x : ∆ (fun x => x * (x - 1)) x = 2 * x.
 Proof.
   unfold DiscreteDerivative; intro.
   ring.
 Qed.
+
 
 Fact dd_x_x1_x2 x : ∆ (fun x => x * (x - 1) * (x - 2)) x = 3 * x * (x - 1).
 Proof.
@@ -96,18 +118,6 @@ Proof.
   ring.
 Qed.
 
-Theorem dd_Sum_Law f g x : ∆ (fun x => f x + g x) x = ∆ f x + ∆ g x.
-Proof.
-  unfold DiscreteDerivative; intros.
-  ring.
-Qed.
-
-Theorem dd_Scalar_Law k f x : ∆ (fun x => k * f x) x = k * ∆ f x.
-Proof.
-  unfold DiscreteDerivative; intros.
-  ring.
-Qed.
-
 Fixpoint Sigma n a f :=
   match n with
     | O => 0
@@ -163,4 +173,3 @@ Proof.
   rewrite Q.
   apply Fundamental_Theorem_Sigma_Lemma.
 Qed.
-
