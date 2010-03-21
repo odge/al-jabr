@@ -76,3 +76,19 @@ Proof. (* 0 = a(0) = a(b+(-b)) = ab + a(-b) ==> ab = -a(-b) ==> -ab = --a(-b) = 
   rewrite rightIdentity in Q'.
   symmetry; assumption.
 Qed.
+
+Lemma ring_negate `(R : Ring) : forall x, x * one ' == x '.
+Proof.
+  intros.
+  rewrite ring_negate_bubble_right.
+  rewrite rightIdentity.
+  reflexivity.
+  assumption.
+Qed.
+
+Theorem neg_times_neg_positive `(R : Ring) : one ' * one ' == one.
+Proof. (* this formally disproves the cubic "truth" of -1 * -1 = -1 in ring theory *)
+  rewrite <- (group_inverse_inverse AddGrp one) at 3.
+  rewrite <- (ring_negate R (one ')).
+  reflexivity.
+Qed.
