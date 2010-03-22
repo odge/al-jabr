@@ -1,0 +1,136 @@
+FMachines.Sigma
+R17 Technology.FirstClassSetoid <> <> lib
+R47 Abstract.Magma <> <> lib
+R64 Abstract.Abelian <> <> lib
+R83 Abstract.Monoid <> <> lib
+R101 Abstract.Group <> <> lib
+R118 Abstract.Ring <> <> lib
+R148 Coq.Arith.Arith <> <> lib
+R154 Coq.Lists.List <> <> lib
+prf 169 <> why_is_this_not_standard
+R211 Coq.Init.Specif "{ x : A  |  P }" not
+R225 Coq.Init.Logic "x = y" not
+R223 Machines.Sigma <> b var
+R227 Coq.Init.Peano <> plus def
+R235 Coq.Init.Datatypes <> S constr
+R237 Machines.Sigma <> d var
+R232 Machines.Sigma <> a var
+R217 Coq.Init.Datatypes <> nat ind
+R204 Coq.Init.Peano "x > y" not
+R202 Machines.Sigma <> b var
+R206 Machines.Sigma <> a var
+R317 Coq.Init.Logic <> False_rect scheme
+R317 Coq.Init.Logic <> False_rect scheme
+R381 Coq.Init.Peano "x > y" not
+R381 Coq.Init.Peano "x > y" not
+R471 Coq.Init.Logic <> False_rect scheme
+R471 Coq.Init.Logic <> False_rect scheme
+R493 Coq.Arith.Plus <> plus_comm thm
+R493 Coq.Arith.Plus <> plus_comm thm
+R518 Coq.Arith.Gt <> gt_irrefl thm
+R518 Coq.Arith.Gt <> gt_irrefl thm
+def 583 <> gt_subtract
+R599 Machines.Sigma <> why_is_this_not_standard thm
+sec 635 <> Sigma
+var 652 Sigma C
+R656 Technology.FirstClassSetoid <> Setoid rec
+var 675 Sigma R
+R679 Abstract.Ring <> Ring class
+def 698 <> nats_from
+R712 Coq.Init.Datatypes <> nat ind
+R721 Coq.Init.Datatypes <> nat ind
+R727 Coq.Init.Datatypes <> list ind
+R732 Coq.Init.Datatypes <> nat ind
+R747 Machines.Sigma <> c var
+R758 Coq.Init.Datatypes "" not
+R763 Coq.Init.Datatypes <> nil constr
+R771 Coq.Init.Datatypes <> S constr
+R781 Coq.Init.Datatypes "x :: y" not
+R779 Machines.Sigma <> x var
+R784 Machines.Sigma <> nats_from def
+R800 Machines.Sigma <> c' var
+R795 Coq.Init.Datatypes <> S constr
+R797 Machines.Sigma <> x var
+def 822 <> sum
+R827 Coq.Init.Datatypes <> list ind
+R844 Coq.Lists.List <> fold_right def
+R874 Abstract.Monoid "'zero'" not
+R869 Abstract.Magma "x + y" not
+R867 Machines.Sigma <> x var
+R871 Machines.Sigma <> y var
+def 892 <> Sigma
+R904 Coq.Init.Datatypes <> nat ind
+R913 Coq.Init.Datatypes <> nat ind
+R951 Machines.Sigma <> sum def
+R956 Coq.Lists.List <> map def
+R963 Machines.Sigma <> nats_from def
+R977 Coq.Init.Peano "n - m" not
+R976 Machines.Sigma <> b var
+R978 Machines.Sigma <> a var
+R973 Machines.Sigma <> a var
+R960 Machines.Sigma <> f var
+prf 991 <> Sigma_prop_1a
+R1036 Coq.Init.Logic "x = y" not
+R1024 Machines.Sigma <> Sigma def
+R1034 Machines.Sigma <> f var
+R1032 Machines.Sigma <> b var
+R1030 Machines.Sigma <> a var
+R1042 Abstract.Magma "x + y" not
+R1038 Machines.Sigma <> f var
+R1040 Machines.Sigma <> a var
+R1044 Machines.Sigma <> Sigma def
+R1058 Machines.Sigma <> f var
+R1056 Machines.Sigma <> b var
+R1051 Coq.Init.Datatypes <> S constr
+R1053 Machines.Sigma <> a var
+R1017 Coq.Init.Peano "x > y" not
+R1015 Machines.Sigma <> b var
+R1019 Machines.Sigma <> a var
+R1104 Machines.Sigma <> why_is_this_not_standard thm
+R1104 Machines.Sigma <> why_is_this_not_standard thm
+R1149 Coq.Init.Logic "x = y" not
+R1145 Coq.Init.Peano "n - m" not
+R1151 Coq.Init.Datatypes <> S constr
+R1149 Coq.Init.Logic "x = y" not
+R1145 Coq.Init.Peano "n - m" not
+R1151 Coq.Init.Datatypes <> S constr
+R1180 Coq.Arith.Minus <> minus_plus thm
+R1180 Coq.Arith.Minus <> minus_plus thm
+R1229 Coq.Numbers.Natural.Peano.NPeano Nat sub_succ_r thm
+R1229 Coq.Numbers.Natural.Peano.NPeano Nat sub_succ_r thm
+R1290 Coq.Init.Peano <> pred_Sn thm
+R1290 Coq.Init.Peano <> pred_Sn thm
+prf 1346 <> Sigma_prop_1b
+R1395 Coq.Init.Logic "x = y" not
+R1379 Machines.Sigma <> Sigma def
+R1393 Machines.Sigma <> f var
+R1388 Coq.Init.Datatypes <> S constr
+R1390 Machines.Sigma <> b var
+R1385 Machines.Sigma <> a var
+R1409 Abstract.Magma "x + y" not
+R1397 Machines.Sigma <> Sigma def
+R1407 Machines.Sigma <> f var
+R1405 Machines.Sigma <> b var
+R1403 Machines.Sigma <> a var
+R1411 Machines.Sigma <> f var
+R1413 Machines.Sigma <> b var
+R1372 Coq.Init.Peano "x > y" not
+R1370 Machines.Sigma <> b var
+R1374 Machines.Sigma <> a var
+R1459 Machines.Sigma <> why_is_this_not_standard thm
+R1459 Machines.Sigma <> why_is_this_not_standard thm
+R1504 Coq.Init.Logic "x = y" not
+R1500 Coq.Init.Peano "n - m" not
+R1506 Coq.Init.Datatypes <> S constr
+R1504 Coq.Init.Logic "x = y" not
+R1500 Coq.Init.Peano "n - m" not
+R1506 Coq.Init.Datatypes <> S constr
+R1535 Coq.Arith.Minus <> minus_plus thm
+R1535 Coq.Arith.Minus <> minus_plus thm
+R1589 Coq.Arith.Minus <> minus_Sn_m thm
+R1589 Coq.Arith.Minus <> minus_Sn_m thm
+R1679 Coq.Arith.Plus <> plus_comm thm
+R1679 Coq.Arith.Plus <> plus_comm thm
+R1716 Abstract.Abelian <> <> lib
+R1749 Abstract.Abelian <> commutativity meth
+R1749 Abstract.Abelian <> commutativity meth

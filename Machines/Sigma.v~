@@ -1,0 +1,42 @@
+Require Import
+  Technology.FirstClassSetoid
+  Abstract.Magma
+  Abstract.Monoid
+  Abstract.Group
+  Abstract.Ring.
+Require Import Arith Omega Wf.
+
+Section Sigma.
+Context `(C : Setoid).
+Context `(R : Ring C).
+
+Definition subtract_lt_measure (ab cd : nat * nat) : Prop :=
+  let (a,b) := ab in let (c,d) := cd in
+    b - a < d - c.
+
+Theorem subtract_lt_measure_well_founded : well_founded subtract_lt_measure.
+Admitted.
+
+Definition Sigma (a b : nat) (f : nat -> C) : C.
+refine (fun a b f =>
+  @Fix_F_2 nat nat subtract_lt_measure (fun _ _ => C)
+  (fun x y =>
+    (fun Rec => _))
+  a b (subtract_lt_measure_well_founded (a,b))).
+refine (
+  match lt_dec x y with
+    | left _ => f a + Rec (S x) y _
+    | right _ => zero
+  end
+).
+
+apply Add.
+
+destruct x; destruct y; simpl; omega.
+
+apply AddMon.
+
+Defined.
+
+Eval compute in (Sigma 3 5 (fun _ => one)).
+
