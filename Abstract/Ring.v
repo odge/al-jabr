@@ -2,6 +2,7 @@ Require Import
   Technology.FirstClassSetoid
   Technology.Tag
   Abstract.Magma
+  Abstract.Abelian
   Abstract.Semigroup
   Abstract.Monoid
   Abstract.Group.
@@ -14,6 +15,7 @@ Open Scope algebra_scope.
 Class Ring (S : Setoid) `(Add : Magma Additive S) `(Mul : Magma Multiplicative S)
   (AddSem : @Semigroup _ _ Add) (MulSem : @Semigroup _ _ Mul)
   (AddMon : @Monoid _ _ Add) (MulMon : @Monoid _ _ Mul)
+  (AddAbel : @Abelian _ _ Add)
   (AddGrp : @Group _ _ Add AddSem AddMon) := {
   leftDistributivity : forall k a b,
     k * (a + b) == k * a + k * b ;

@@ -37,7 +37,6 @@ Proof.
   ring.
 Qed.
 
-
 Fact dd_x_x1_x2 x : ∆ (fun x => x * (x - 1) * (x - 2)) x = 3 * x * (x - 1).
 Proof.
   unfold DiscreteDerivative; intro.
@@ -173,3 +172,4 @@ Proof.
   rewrite Q.
   apply Fundamental_Theorem_Sigma_Lemma.
 Qed.
+
