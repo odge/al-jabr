@@ -8,85 +8,101 @@ Require Import
   Abstract.Ring.
 Require Import Arith List.
 
-Theorem why_is_this_not_standard {a b} : b > a -> { d : nat | b = plus a (S d) }.
-Proof.
-  intros a b H.
-  induction a.
-  simpl in *.
-  destruct b.
-  apply False_rect.
-  inversion H.
-  exists b; reflexivity.
-  assert (b > a) as Q by auto with arith.
-  destruct (IHa Q).
-  destruct x.
-  rewrite e in H.
-  apply False_rect.
-  rewrite plus_comm in H.
-  apply (gt_irrefl _ H).
-  exists x.
-  rewrite e.
-  ring.
-Qed.
-Definition gt_subtract := @why_is_this_not_standard.
-
-
 Section Sigma.
-Context `(C : Setoid).
-Context `(R : Ring C).
+Context `(car : Setoid).
+Context `(R : Ring car).
+Context `(car' : Setoid).
+Context `(R' : Ring car').
 
-Fixpoint nats_from (x: nat) (c: nat): list nat :=
-  match c with
-  | 0 => nil
-  | S c' => x :: nats_from (S x) c'
+Fixpoint Σ (elements : list car) (f : car -> car') : car' :=
+  match elements with
+    | nil => zero
+    | x :: xs => f x + Σ xs f
   end.
 
-Definition sum: list C -> C :=
-  fold_right (fun x y => x + y) zero.
-
-Definition Sigma (a b: nat) (f: nat -> C) (* Thanks to Eelis! *)
-  := sum (map f (nats_from a (b-a))).
-
-Lemma Sigma_prop_1a {a b f} : b > a -> Sigma a b f == f a + Sigma (S a) b f.
+Lemma Σ_prop_1 u v f : Σ u f + Σ v f == Σ (u ++ v) f.
 Proof.
-  unfold Sigma; intros.
-  destruct (why_is_this_not_standard H).
-  assert (b - a = S x).
-  rewrite e.
-  rewrite minus_plus.
-  reflexivity.
-  rewrite H0.
-  pose (NPeano.Nat.sub_succ_r b a).
-  rewrite H0 in e0.
-  rewrite <- pred_Sn in e0.
-  rewrite e0.
+  intros; induction u; simpl.
+  rewrite leftIdentity; reflexivity.
+  rewrite <- IHu.
+  rewrite associativity.
   reflexivity.
 Qed.
 
-Lemma Sigma_prop_1b {a b f} : b > a -> Sigma a (S b) f == Sigma a b f + f b.
+Lemma Σ_prop_2 a u f : Σ (a::u) f == f a + Σ u f.
 Proof.
-  unfold Sigma; intros.
-  destruct (why_is_this_not_standard H).
-  assert (b - a = S x).
-  rewrite e.
-  rewrite minus_plus.
   reflexivity.
-  rewrite H0.
-  rewrite <- minus_Sn_m.
-  rewrite H0.
-  rewrite e.
-  
-  clear e H0.
-  revert f.
-  induction x.
-  simpl.
-  rewrite plus_comm.
-  simpl.
-  intro.
-  rewrite <- (@commutativity _ _ _ _ zero).
-  rewrite associativity.
+Qed.
+
+Lemma Σ_prop_3 u a f : Σ (u++a::nil) f == Σ u f + f a.
+Proof.
+  intros; induction u; simpl.
+  rewrite leftIdentity; rewrite rightIdentity; reflexivity.
+  rewrite IHu.
+  rewrite associativity; reflexivity.
+Qed.
+
+Lemma Σ_prop_distributivity k u f : Σ u (fun i => k * f i) == k * Σ u f.
+Proof.
+  intros; induction u; simpl.
+  rewrite ring_zero_absorbant_right.
   reflexivity.
-(** somethings wrong.. this should not be this difficult **)
-Admitted.
+  assumption. (*?*)
+  rewrite IHu.
+  rewrite leftDistributivity.
+  reflexivity.
+Qed.
+
+Lemma Σ_prop_distributivity' a b u f : Σ u (fun i => (a i + b i) * f i) == Σ u (fun i => a i * f i) + Σ u (fun i => b i * f i).
+Proof.
+  intros; induction u; simpl.
+  rewrite leftIdentity.
+  reflexivity.
+  rewrite IHu.
+  rewrite rightDistributivity.
+  repeat rewrite <- associativity.
+  repeat rewrite (associativity _ (b a0 * f a0)).
+  rewrite (commutativity (Σ u (fun i : car => a i * f i)) (b a0 * f a0)).
+  repeat rewrite associativity.
+  reflexivity.
+Qed.
+
+Lemma Σ_map u f m : Σ (map m u) f == Σ u (fun i => f (m i)).
+Proof.
+  intros; induction u; simpl.
+  reflexivity.
+  rewrite IHu.
+  reflexivity.
+Qed.
+
+Fixpoint ι (n : nat) :=
+  match n with
+    | O => nil
+    | S n => ι n ++ S n::nil
+  end.
+
+Lemma ι_prop_2 {n} : ι (S n) = ι n ++ S n :: nil.
+Proof.
+  reflexivity.
+Qed.
+
+Lemma ι_prop_1 {n} : ι (S n) = 1 :: map S (ι n).
+Proof.
+  induction n.
+  reflexivity.
+  rewrite ι_prop_2.
+  rewrite IHn at 1.
+  rewrite <- app_comm_cons.
+  cut (map S (ι n) ++ S (S n)::nil = map S (ι (S n))).
+  intro Q; rewrite Q; reflexivity.
+  clear IHn; induction n.
+  reflexivity.
+  rewrite <- IHn.
+  simpl.
+  repeat rewrite map_app.
+  repeat rewrite app_ass.
+  reflexivity.
+Qed.
 
 End Sigma.
+

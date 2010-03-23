@@ -49,6 +49,11 @@ Proof. (* x*0=x*0+((x*0)+-(x*0))=x*(0+0)*-x*0=x*0+-x*0=0 *)
   reflexivity.
 Qed.
 
+Lemma ring_zero_absorbs_left `(R : Ring) : forall x,
+  zero * x == zero.
+Proof. (* TODO: Prove this using the opposite ring *)
+Admitted.
+
 Lemma ring_zero_absorbant_right `(R : Ring) :
   forall a, a * zero == zero.
 Proof.
