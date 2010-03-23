@@ -105,4 +105,3 @@ Proof.
 Qed.
 
 End Sigma.
-
