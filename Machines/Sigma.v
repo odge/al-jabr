@@ -66,6 +66,19 @@ Proof.
   reflexivity.
 Qed.
 
+Lemma Σ_prop_distributivity'' a b u : Σ u (fun i => a i + b i) == Σ u (fun i => a i) + Σ u (fun i => b i).
+Proof.
+  intros; induction u; simpl.
+  rewrite leftIdentity.
+  reflexivity.
+  rewrite IHu.
+  rewrite (associativity _ (b a0)).
+  repeat rewrite <- (associativity (a a0)).
+  rewrite (commutativity _ (b a0)).
+  repeat rewrite associativity.
+  reflexivity.
+Qed.
+
 Lemma Σ_map u f m : Σ (map m u) f == Σ u (fun i => f (m i)).
 Proof.
   intros; induction u; simpl.
@@ -74,18 +87,26 @@ Proof.
   reflexivity.
 Qed.
 
+Lemma Σ_extensionality u f g : (forall x, f x == g x) -> Σ u f == Σ u g.
+Proof.
+  intros u f g Q; induction u.
+  reflexivity.
+  simpl; rewrite Q; rewrite IHu.
+  reflexivity.
+Qed.
+
 Fixpoint ι (n : nat) :=
   match n with
     | O => nil
-    | S n => ι n ++ S n::nil
-  end.
+    | S n => ι n
+  end ++ n::nil.
 
 Lemma ι_prop_2 {n} : ι (S n) = ι n ++ S n :: nil.
 Proof.
   reflexivity.
 Qed.
 
-Lemma ι_prop_1 {n} : ι (S n) = 1 :: map S (ι n).
+Lemma ι_prop_1 {n} : ι (S n) = 0 :: map S (ι n).
 Proof.
   induction n.
   reflexivity.
@@ -104,3 +125,5 @@ Proof.
 Qed.
 
 End Sigma.
+
+Implicit Arguments Σ [car0 Add AddMon X].
