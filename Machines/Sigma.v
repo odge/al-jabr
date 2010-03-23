@@ -11,10 +11,9 @@ Require Import Arith List.
 Section Sigma.
 Context `(car : Setoid).
 Context `(R : Ring car).
-Context `(car' : Setoid).
-Context `(R' : Ring car').
+Variable X : Type.
 
-Fixpoint Σ (elements : list car) (f : car -> car') : car' :=
+Fixpoint Σ (elements : list X) (f : X -> car) : car :=
   match elements with
     | nil => zero
     | x :: xs => f x + Σ xs f
@@ -62,7 +61,7 @@ Proof.
   rewrite rightDistributivity.
   repeat rewrite <- associativity.
   repeat rewrite (associativity _ (b a0 * f a0)).
-  rewrite (commutativity (Σ u (fun i : car => a i * f i)) (b a0 * f a0)).
+  rewrite (commutativity (Σ u (fun i => a i * f i)) (b a0 * f a0)).
   repeat rewrite associativity.
   reflexivity.
 Qed.
