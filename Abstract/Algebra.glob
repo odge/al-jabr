@@ -1,0 +1,9 @@
+FAbstract.Algebra
+R17 Abstract.Magma <> <> lib
+R34 Abstract.Abelian <> <> lib
+R53 Abstract.Semigroup <> <> lib
+R74 Abstract.Monoid <> <> lib
+R92 Abstract.Group <> <> lib
+R109 Abstract.Ring <> <> lib
+R125 Abstract.Integral <> <> lib
+R145 Abstract.Field <> <> lib

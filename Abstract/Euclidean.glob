@@ -1,0 +1,24 @@
+FAbstract.Euclidean
+R17 Technology.FirstClassSetoid <> <> lib
+R47 Technology.Tag <> <> lib
+R64 Abstract.Magma <> <> lib
+R81 Abstract.Semigroup <> <> lib
+R102 Abstract.Monoid <> <> lib
+R120 Abstract.Group <> <> lib
+R137 Abstract.Ring <> <> lib
+R153 Abstract.Integral <> <> lib
+R173 Concrete.N <> <> lib
+rec 290 <> Euclidean
+proj 327 <> degreeFunction
+proj 355 <> degreeFunctionRespectful
+R308 Abstract.Integral <> Integral class
+R317 Abstract.Euclidean <> S var
+R349 Concrete.N <> N def
+R344 Abstract.Euclidean <> S var
+R382 Coq.Classes.Morphisms <> Proper class
+R405 Abstract.Euclidean <> degreeFunction meth
+R395 Coq.Classes.Morphisms " R ==> R' " not
+R390 Technology.FirstClassSetoid <> eq proj
+R393 Abstract.Euclidean <> S var
+R399 Technology.FirstClassSetoid <> eq proj
+R402 Concrete.N <> N def

@@ -1,0 +1,1 @@
+Abstract/Algebra.vo Abstract/Algebra.glob: Abstract/Algebra.v Abstract/Magma.vo Abstract/Abelian.vo Abstract/Semigroup.vo Abstract/Monoid.vo Abstract/Group.vo Abstract/Ring.vo Abstract/Integral.vo Abstract/Field.vo

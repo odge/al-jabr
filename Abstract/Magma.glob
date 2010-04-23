@@ -1,0 +1,42 @@
+FAbstract.Magma
+R17 Technology.FirstClassSetoid <> <> lib
+R47 Technology.Tag <> <> lib
+rec 167 <> Magma
+proj 205 <> operation
+proj 233 <> operationRespectful
+R180 Technology.Tag <> Tag ind
+R190 Technology.FirstClassSetoid <> Setoid rec
+R227 Abstract.Magma <> S var
+R222 Abstract.Magma <> S var
+R217 Abstract.Magma <> S var
+R255 Coq.Classes.Morphisms <> Proper class
+R287 Abstract.Magma <> operation meth
+R268 Coq.Classes.Morphisms " R ==> R' " not
+R263 Technology.FirstClassSetoid <> eq proj
+R266 Abstract.Magma <> S var
+R277 Coq.Classes.Morphisms " R ==> R' " not
+R272 Technology.FirstClassSetoid <> eq proj
+R275 Abstract.Magma <> S var
+R281 Technology.FirstClassSetoid <> eq proj
+R284 Abstract.Magma <> S var
+R314 Abstract.Magma <> operation meth
+R388 Abstract.Magma <> operation meth
+R398 Technology.Tag <> Additive constr
+R444 Abstract.Magma <> operation meth
+R454 Technology.Tag <> Multiplicative constr
+R523 Technology.Tag <> Tag ind
+R533 Technology.FirstClassSetoid <> Setoid rec
+R547 Abstract.Magma <> Magma class
+R557 Abstract.Magma <> S var
+R553 Abstract.Magma <> tag var
+R562 Abstract.Magma <> operation meth
+R593 Coq.Classes.Morphisms " R ==> R' " not
+R588 Technology.FirstClassSetoid <> eq proj
+R591 Abstract.Magma <> S var
+R602 Coq.Classes.Morphisms " R ==> R' " not
+R597 Technology.FirstClassSetoid <> eq proj
+R600 Abstract.Magma <> S var
+R606 Technology.FirstClassSetoid <> eq proj
+R609 Abstract.Magma <> S var
+R642 Abstract.Magma <> operationRespectful meth
+R642 Abstract.Magma <> operationRespectful meth

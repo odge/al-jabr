@@ -1,0 +1,40 @@
+FAbstract.Monoid
+R17 Technology.FirstClassSetoid <> <> lib
+R47 Technology.Tag <> <> lib
+R64 Abstract.Magma <> <> lib
+rec 185 <> Monoid
+proj 212 <> identity
+proj 225 <> leftIdentity
+proj 272 <> rightIdentity
+R198 Abstract.Magma <> Magma class
+R263 Technology.FirstClassSetoid "x == y" not
+R259 Abstract.Magma "x & y" not
+R250 Abstract.Monoid <> identity meth
+R261 Abstract.Monoid <> x var
+R266 Abstract.Monoid <> x var
+R311 Technology.FirstClassSetoid "x == y" not
+R300 Abstract.Magma "x & y" not
+R298 Abstract.Monoid <> x var
+R302 Abstract.Monoid <> identity meth
+R314 Abstract.Monoid <> x var
+R343 Abstract.Monoid <> identity meth
+R352 Technology.Tag <> Additive constr
+R407 Abstract.Monoid <> identity meth
+R416 Technology.Tag <> Multiplicative constr
+def 465 <> expt
+R480 Abstract.Monoid <> Monoid class
+R502 Abstract.Monoid <> S var
+R487 Technology.Tag <> Multiplicative constr
+R510 Abstract.Monoid <> S var
+R518 Coq.Init.Datatypes <> nat ind
+R525 Abstract.Monoid <> S var
+R538 Abstract.Monoid <> n var
+R551 Coq.Init.Datatypes <> O constr
+R556 Abstract.Monoid "'one'" not
+R566 Coq.Init.Datatypes <> S constr
+R575 Abstract.Magma "x * y" not
+R573 Abstract.Monoid <> m var
+R577 Abstract.Monoid <> expt def
+R584 Abstract.Monoid <> n var
+R582 Abstract.Monoid <> m var
+R606 Abstract.Monoid <> expt def

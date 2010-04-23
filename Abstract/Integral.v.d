@@ -1,0 +1,1 @@
+Abstract/Integral.vo Abstract/Integral.glob: Abstract/Integral.v Technology/FirstClassSetoid.vo Technology/Tag.vo Abstract/Magma.vo Abstract/Semigroup.vo Abstract/Monoid.vo Abstract/Group.vo Abstract/Ring.vo

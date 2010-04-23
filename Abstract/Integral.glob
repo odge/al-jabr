@@ -1,0 +1,82 @@
+FAbstract.Integral
+R17 Technology.FirstClassSetoid <> <> lib
+R47 Technology.Tag <> <> lib
+R64 Abstract.Magma <> <> lib
+R81 Abstract.Semigroup <> <> lib
+R102 Abstract.Monoid <> <> lib
+R120 Abstract.Group <> <> lib
+R137 Abstract.Ring <> <> lib
+rec 257 <> Integral
+proj 285 <> nonDegernerate
+proj 317 <> noZeroDivisors
+R272 Abstract.Ring <> Ring class
+R306 Technology.FirstClassSetoid "x # y" not
+R302 Abstract.Monoid "'one'" not
+R308 Abstract.Monoid "'zero'" not
+R377 Coq.Init.Logic "A \/ B" not
+R369 Technology.FirstClassSetoid "x == y" not
+R367 Abstract.Integral <> a var
+R372 Abstract.Monoid "'zero'" not
+R382 Technology.FirstClassSetoid "x == y" not
+R380 Abstract.Integral <> b var
+R385 Abstract.Monoid "'zero'" not
+R356 Technology.FirstClassSetoid "x == y" not
+R352 Abstract.Magma "x * y" not
+R350 Abstract.Integral <> a var
+R354 Abstract.Integral <> b var
+R359 Abstract.Monoid "'zero'" not
+prf 402 <> integral_left_cancellation
+R435 Abstract.Integral <> Integral class
+R495 Technology.FirstClassSetoid "x == y" not
+R493 Abstract.Integral <> a var
+R498 Abstract.Integral <> b var
+R481 Technology.FirstClassSetoid "x == y" not
+R477 Abstract.Magma "x * y" not
+R475 Abstract.Integral <> k var
+R479 Abstract.Integral <> a var
+R486 Abstract.Magma "x * y" not
+R484 Abstract.Integral <> k var
+R488 Abstract.Integral <> b var
+R465 Technology.FirstClassSetoid "x # y" not
+R463 Abstract.Integral <> k var
+R467 Abstract.Monoid "'zero'" not
+R573 Technology.FirstClassSetoid "x == y" not
+R561 Abstract.Magma "x + y" not
+R557 Abstract.Magma "x * y" not
+R569 Abstract.Group "x '''" not
+R566 Abstract.Magma "x * y" not
+R576 Abstract.Monoid "'zero'" not
+R573 Technology.FirstClassSetoid "x == y" not
+R561 Abstract.Magma "x + y" not
+R557 Abstract.Magma "x * y" not
+R569 Abstract.Group "x '''" not
+R566 Abstract.Magma "x * y" not
+R576 Abstract.Monoid "'zero'" not
+R612 Abstract.Group <> rightInverse meth
+R612 Abstract.Group <> rightInverse meth
+R654 Abstract.Ring <> ring_negate_bubble_right thm
+R654 Abstract.Ring <> ring_negate_bubble_right thm
+R734 Abstract.Ring <> leftDistributivity meth
+R734 Abstract.Ring <> leftDistributivity meth
+R772 Abstract.Integral <> noZeroDivisors meth
+R772 Abstract.Integral <> noZeroDivisors meth
+R812 Technology.FirstClassSetoid <> nonequal proj
+R812 Technology.FirstClassSetoid <> nonequal proj
+R867 Abstract.Group <> group_unique_inverses thm
+R867 Abstract.Group <> group_unique_inverses thm
+R921 Abstract.Group <> group_inverse_inverse thm
+R921 Abstract.Group <> group_inverse_inverse thm
+def 981 <> Irreducible
+R1003 Abstract.Integral <> Integral class
+R1012 Abstract.Integral <> S var
+R1017 Abstract.Integral <> S var
+R1086 Coq.Init.Logic "A \/ B" not
+R1077 Abstract.Ring <> Unit def
+R1084 Abstract.Integral <> a var
+R1089 Abstract.Ring <> Unit def
+R1096 Abstract.Integral <> b var
+R1065 Technology.FirstClassSetoid "x == y" not
+R1063 Abstract.Integral <> r var
+R1070 Abstract.Magma "x * y" not
+R1068 Abstract.Integral <> a var
+R1072 Abstract.Integral <> b var

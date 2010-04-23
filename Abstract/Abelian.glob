@@ -1,0 +1,14 @@
+FAbstract.Abelian
+R17 Technology.FirstClassSetoid <> <> lib
+R47 Technology.Tag <> <> lib
+R64 Abstract.Magma <> <> lib
+rec 185 <> Abelian
+proj 213 <> commutativity
+R199 Abstract.Magma <> Magma class
+R251 Technology.FirstClassSetoid "x == y" not
+R247 Abstract.Magma "x & y" not
+R245 Abstract.Abelian <> a var
+R249 Abstract.Abelian <> b var
+R256 Abstract.Magma "x & y" not
+R254 Abstract.Abelian <> b var
+R258 Abstract.Abelian <> a var

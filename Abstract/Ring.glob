@@ -1,0 +1,249 @@
+FAbstract.Ring
+R17 Technology.FirstClassSetoid <> <> lib
+R47 Technology.Tag <> <> lib
+R64 Abstract.Magma <> <> lib
+R81 Abstract.Abelian <> <> lib
+R100 Abstract.Semigroup <> <> lib
+R121 Abstract.Monoid <> <> lib
+R139 Abstract.Group <> <> lib
+rec 260 <> Ring
+proj 534 <> leftDistributivity
+proj 606 <> rightDistributivity
+R270 Technology.FirstClassSetoid <> Setoid rec
+R286 Abstract.Magma <> Magma class
+R301 Abstract.Ring <> S var
+R292 Technology.Tag <> Additive constr
+R312 Abstract.Magma <> Magma class
+R333 Abstract.Ring <> S var
+R318 Technology.Tag <> Multiplicative constr
+R349 Abstract.Semigroup <> Semigroup class
+R363 Abstract.Ring <> Add var
+R379 Abstract.Semigroup <> Semigroup class
+R393 Abstract.Ring <> Mul var
+R411 Abstract.Monoid <> Monoid class
+R422 Abstract.Ring <> Add var
+R438 Abstract.Monoid <> Monoid class
+R449 Abstract.Ring <> Mul var
+R468 Abstract.Abelian <> Abelian class
+R480 Abstract.Ring <> Add var
+R498 Abstract.Group <> Group class
+R519 Abstract.Ring <> AddMon var
+R512 Abstract.Ring <> AddSem var
+R508 Abstract.Ring <> Add var
+R585 Technology.FirstClassSetoid "x == y" not
+R575 Abstract.Magma "x * y" not
+R573 Abstract.Ring <> k var
+R580 Abstract.Magma "x + y" not
+R578 Abstract.Ring <> a var
+R582 Abstract.Ring <> b var
+R594 Abstract.Magma "x + y" not
+R590 Abstract.Magma "x * y" not
+R588 Abstract.Ring <> k var
+R592 Abstract.Ring <> a var
+R598 Abstract.Magma "x * y" not
+R596 Abstract.Ring <> k var
+R600 Abstract.Ring <> b var
+R658 Technology.FirstClassSetoid "x == y" not
+R652 Abstract.Magma "x * y" not
+R649 Abstract.Magma "x + y" not
+R647 Abstract.Ring <> a var
+R651 Abstract.Ring <> b var
+R656 Abstract.Ring <> k var
+R667 Abstract.Magma "x + y" not
+R663 Abstract.Magma "x * y" not
+R661 Abstract.Ring <> a var
+R665 Abstract.Ring <> k var
+R671 Abstract.Magma "x * y" not
+R669 Abstract.Ring <> b var
+R673 Abstract.Ring <> k var
+def 751 <> Unit
+R766 Abstract.Ring <> Ring class
+R771 Abstract.Ring <> S var
+R776 Abstract.Ring <> S var
+R804 Coq.Init.Logic "'exists' x , p" not
+R826 Technology.FirstClassSetoid "x == y" not
+R822 Abstract.Magma "x * y" not
+R820 Abstract.Ring <> a var
+R824 Abstract.Ring <> b var
+R829 Abstract.Monoid "'one'" not
+prf 843 <> ring_Unit_one
+R863 Abstract.Ring <> Ring class
+R871 Abstract.Ring <> Unit def
+R878 Abstract.Monoid "'one'" not
+R876 Abstract.Ring <> R var
+R890 Abstract.Monoid "'one'" not
+R903 Abstract.Monoid <> leftIdentity meth
+R890 Abstract.Monoid "'one'" not
+R903 Abstract.Monoid <> leftIdentity meth
+prf 942 <> ring_zero_absorbs_right
+R972 Abstract.Ring <> Ring class
+R1001 Technology.FirstClassSetoid "x == y" not
+R994 Abstract.Magma "x * y" not
+R992 Abstract.Ring <> x var
+R996 Abstract.Monoid "'zero'" not
+R1004 Abstract.Monoid "'zero'" not
+R1099 Technology.FirstClassSetoid "x == y" not
+R1093 Abstract.Magma "x * y" not
+R1094 Abstract.Monoid "'zero'" not
+R1118 Abstract.Magma "x + y" not
+R1109 Abstract.Magma "x + y" not
+R1103 Abstract.Magma "x * y" not
+R1104 Abstract.Monoid "'zero'" not
+R1112 Abstract.Magma "x * y" not
+R1113 Abstract.Monoid "'zero'" not
+R1127 Abstract.Group "x '''" not
+R1122 Abstract.Magma "x * y" not
+R1123 Abstract.Monoid "'zero'" not
+R1099 Technology.FirstClassSetoid "x == y" not
+R1093 Abstract.Magma "x * y" not
+R1094 Abstract.Monoid "'zero'" not
+R1118 Abstract.Magma "x + y" not
+R1109 Abstract.Magma "x + y" not
+R1103 Abstract.Magma "x * y" not
+R1104 Abstract.Monoid "'zero'" not
+R1112 Abstract.Magma "x * y" not
+R1113 Abstract.Monoid "'zero'" not
+R1127 Abstract.Group "x '''" not
+R1122 Abstract.Magma "x * y" not
+R1123 Abstract.Monoid "'zero'" not
+R1150 Abstract.Semigroup <> associativity meth
+R1150 Abstract.Semigroup <> associativity meth
+R1175 Abstract.Group <> rightInverse meth
+R1175 Abstract.Group <> rightInverse meth
+R1199 Abstract.Monoid <> rightIdentity meth
+R1199 Abstract.Monoid <> rightIdentity meth
+R1255 Abstract.Ring <> leftDistributivity meth
+R1255 Abstract.Ring <> leftDistributivity meth
+R1285 Abstract.Monoid <> leftIdentity meth
+R1285 Abstract.Monoid <> leftIdentity meth
+R1309 Abstract.Group <> rightInverse meth
+R1309 Abstract.Group <> rightInverse meth
+prf 1350 <> ring_zero_absorbs_left
+R1379 Abstract.Ring <> Ring class
+R1408 Technology.FirstClassSetoid "x == y" not
+R1404 Abstract.Magma "x * y" not
+R1399 Abstract.Monoid "'zero'" not
+R1406 Abstract.Ring <> x var
+R1411 Abstract.Monoid "'zero'" not
+prf 1488 <> ring_zero_absorbant_right
+R1520 Abstract.Ring <> Ring class
+R1549 Technology.FirstClassSetoid "x == y" not
+R1542 Abstract.Magma "x * y" not
+R1540 Abstract.Ring <> a var
+R1544 Abstract.Monoid "'zero'" not
+R1552 Abstract.Monoid "'zero'" not
+R1595 Technology.FirstClassSetoid "x == y" not
+R1588 Abstract.Magma "x + y" not
+R1590 Abstract.Monoid "'zero'" not
+R1618 Abstract.Monoid <> rightIdentity meth
+R1595 Technology.FirstClassSetoid "x == y" not
+R1588 Abstract.Magma "x + y" not
+R1590 Abstract.Monoid "'zero'" not
+R1618 Abstract.Monoid <> rightIdentity meth
+R1672 Technology.FirstClassSetoid "x == y" not
+R1659 Abstract.Magma "x * y" not
+R1664 Abstract.Magma "x + y" not
+R1666 Abstract.Monoid "'zero'" not
+R1677 Abstract.Magma "x * y" not
+R1672 Technology.FirstClassSetoid "x == y" not
+R1659 Abstract.Magma "x * y" not
+R1664 Abstract.Magma "x + y" not
+R1666 Abstract.Monoid "'zero'" not
+R1677 Abstract.Magma "x * y" not
+R1727 Abstract.Ring <> leftDistributivity meth
+R1727 Abstract.Ring <> leftDistributivity meth
+R1762 Abstract.Group <> group_unique_identity_right thm
+R1762 Abstract.Group <> group_unique_identity_right thm
+prf 1815 <> ring_negate_bubble_right
+R1846 Abstract.Ring <> Ring class
+R1876 Technology.FirstClassSetoid "x == y" not
+R1870 Abstract.Magma "x * y" not
+R1868 Abstract.Ring <> a var
+R1874 Abstract.Group "x '''" not
+R1872 Abstract.Ring <> b var
+R1885 Abstract.Group "x '''" not
+R1882 Abstract.Magma "x * y" not
+R1880 Abstract.Ring <> a var
+R1884 Abstract.Ring <> b var
+R2004 Technology.FirstClassSetoid "x == y" not
+R1999 Abstract.Monoid "'zero'" not
+R2013 Abstract.Magma "x + y" not
+R2009 Abstract.Magma "x * y" not
+R2017 Abstract.Magma "x * y" not
+R2021 Abstract.Group "x '''" not
+R2004 Technology.FirstClassSetoid "x == y" not
+R1999 Abstract.Monoid "'zero'" not
+R2013 Abstract.Magma "x + y" not
+R2009 Abstract.Magma "x * y" not
+R2017 Abstract.Magma "x * y" not
+R2021 Abstract.Group "x '''" not
+R2043 Abstract.Ring <> leftDistributivity meth
+R2043 Abstract.Ring <> leftDistributivity meth
+R2073 Abstract.Group <> rightInverse meth
+R2073 Abstract.Group <> rightInverse meth
+R2097 Abstract.Ring <> ring_zero_absorbs_right thm
+R2097 Abstract.Ring <> ring_zero_absorbs_right thm
+R2204 Technology.FirstClassSetoid "x == y" not
+R2198 Abstract.Magma "x + y" not
+R2196 Abstract.Group "x '''" not
+R2194 Abstract.Magma "x * y" not
+R2199 Abstract.Monoid "'zero'" not
+R2217 Abstract.Magma "x + y" not
+R2213 Abstract.Magma "x + y" not
+R2211 Abstract.Group "x '''" not
+R2209 Abstract.Magma "x * y" not
+R2215 Abstract.Magma "x * y" not
+R2219 Abstract.Magma "x * y" not
+R2222 Abstract.Group "x '''" not
+R2204 Technology.FirstClassSetoid "x == y" not
+R2198 Abstract.Magma "x + y" not
+R2196 Abstract.Group "x '''" not
+R2194 Abstract.Magma "x * y" not
+R2199 Abstract.Monoid "'zero'" not
+R2217 Abstract.Magma "x + y" not
+R2213 Abstract.Magma "x + y" not
+R2211 Abstract.Group "x '''" not
+R2209 Abstract.Magma "x * y" not
+R2215 Abstract.Magma "x * y" not
+R2219 Abstract.Magma "x * y" not
+R2222 Abstract.Group "x '''" not
+R2255 Abstract.Semigroup <> associativity meth
+R2255 Abstract.Semigroup <> associativity meth
+R2295 Abstract.Group <> leftInverse meth
+R2295 Abstract.Group <> leftInverse meth
+R2324 Abstract.Monoid <> leftIdentity meth
+R2324 Abstract.Monoid <> leftIdentity meth
+R2354 Abstract.Monoid <> rightIdentity meth
+R2354 Abstract.Monoid <> rightIdentity meth
+prf 2411 <> ring_negate
+R2429 Abstract.Ring <> Ring class
+R2457 Technology.FirstClassSetoid "x == y" not
+R2449 Abstract.Magma "x * y" not
+R2447 Abstract.Ring <> x var
+R2455 Abstract.Group "x '''" not
+R2451 Abstract.Monoid "'one'" not
+R2462 Abstract.Group "x '''" not
+R2460 Abstract.Ring <> x var
+R2492 Abstract.Ring <> ring_negate_bubble_right thm
+R2492 Abstract.Ring <> ring_negate_bubble_right thm
+R2528 Abstract.Monoid <> rightIdentity meth
+R2528 Abstract.Monoid <> rightIdentity meth
+prf 2586 <> neg_times_neg_positive
+R2615 Abstract.Ring <> Ring class
+R2637 Technology.FirstClassSetoid "x == y" not
+R2629 Abstract.Magma "x * y" not
+R2627 Abstract.Group "x '''" not
+R2623 Abstract.Monoid "'one'" not
+R2635 Abstract.Group "x '''" not
+R2631 Abstract.Monoid "'one'" not
+R2640 Abstract.Monoid "'one'" not
+R2745 Abstract.Group <> group_inverse_inverse thm
+R2774 Abstract.Monoid "'one'" not
+R2745 Abstract.Group <> group_inverse_inverse thm
+R2774 Abstract.Monoid "'one'" not
+R2799 Abstract.Ring <> ring_negate thm
+R2818 Abstract.Group "x '''" not
+R2814 Abstract.Monoid "'one'" not
+R2799 Abstract.Ring <> ring_negate thm
+R2818 Abstract.Group "x '''" not
+R2814 Abstract.Monoid "'one'" not

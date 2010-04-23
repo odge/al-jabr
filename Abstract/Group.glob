@@ -1,0 +1,352 @@
+FAbstract.Group
+R17 Technology.FirstClassSetoid <> <> lib
+R47 Technology.Tag <> <> lib
+R64 Abstract.Magma <> <> lib
+R81 Abstract.Semigroup <> <> lib
+R102 Abstract.Monoid <> <> lib
+rec 224 <> Group
+proj 333 <> invert
+proj 353 <> invertRespectful
+proj 406 <> leftInverse
+proj 459 <> rightInverse
+R237 Technology.Tag <> Tag ind
+R247 Technology.FirstClassSetoid <> Setoid rec
+R261 Abstract.Magma <> Magma class
+R271 Abstract.Group <> S var
+R267 Abstract.Group <> tag var
+R283 Abstract.Semigroup <> Semigroup class
+R299 Abstract.Group <> M var
+R297 Abstract.Group <> S var
+R293 Abstract.Group <> tag var
+R310 Abstract.Monoid <> Monoid class
+R323 Abstract.Group <> M var
+R321 Abstract.Group <> S var
+R317 Abstract.Group <> tag var
+R347 Abstract.Group <> S var
+R342 Abstract.Group <> S var
+R372 Coq.Classes.Morphisms <> Proper class
+R395 Abstract.Group <> invert meth
+R385 Coq.Classes.Morphisms " R ==> R' " not
+R380 Technology.FirstClassSetoid <> eq proj
+R383 Abstract.Group <> S var
+R389 Technology.FirstClassSetoid <> eq proj
+R392 Abstract.Group <> S var
+R443 Technology.FirstClassSetoid "x == y" not
+R439 Abstract.Magma "x & y" not
+R430 Abstract.Group <> invert meth
+R437 Abstract.Group <> x var
+R441 Abstract.Group <> x var
+R446 Abstract.Monoid <> identity meth
+R497 Technology.FirstClassSetoid "x == y" not
+R486 Abstract.Magma "x & y" not
+R484 Abstract.Group <> x var
+R488 Abstract.Group <> invert meth
+R495 Abstract.Group <> x var
+R500 Abstract.Monoid <> identity meth
+R535 Abstract.Group <> invert meth
+R638 Technology.Tag <> Tag ind
+R648 Technology.FirstClassSetoid <> Setoid rec
+R662 Abstract.Group <> Group class
+R672 Abstract.Group <> S var
+R668 Abstract.Group <> tag var
+R677 Abstract.Group <> invert meth
+R705 Coq.Classes.Morphisms " R ==> R' " not
+R700 Technology.FirstClassSetoid <> eq proj
+R703 Abstract.Group <> S var
+R709 Technology.FirstClassSetoid <> eq proj
+R712 Abstract.Group <> S var
+R742 Abstract.Group <> invertRespectful meth
+R742 Abstract.Group <> invertRespectful meth
+prf 772 <> group_identity_self_inverse
+R806 Abstract.Group <> Group class
+R828 Technology.FirstClassSetoid "x == y" not
+R826 Abstract.Group "x '''" not
+R817 Abstract.Monoid <> identity meth
+R831 Abstract.Monoid <> identity meth
+R880 Technology.FirstClassSetoid "x == y" not
+R869 Abstract.Magma "x & y" not
+R867 Abstract.Group "x '''" not
+R858 Abstract.Monoid <> identity meth
+R871 Abstract.Monoid <> identity meth
+R883 Abstract.Monoid <> identity meth
+R910 Abstract.Group <> leftInverse meth
+R880 Technology.FirstClassSetoid "x == y" not
+R869 Abstract.Magma "x & y" not
+R867 Abstract.Group "x '''" not
+R858 Abstract.Monoid <> identity meth
+R871 Abstract.Monoid <> identity meth
+R883 Abstract.Monoid <> identity meth
+R910 Abstract.Group <> leftInverse meth
+R947 Abstract.Monoid <> rightIdentity meth
+R947 Abstract.Monoid <> rightIdentity meth
+prf 993 <> group_unique_identity_left
+R1026 Abstract.Group <> Group class
+R1065 Technology.FirstClassSetoid "x == y" not
+R1063 Abstract.Group <> x var
+R1068 Abstract.Monoid <> identity meth
+R1055 Technology.FirstClassSetoid "x == y" not
+R1051 Abstract.Magma "x & y" not
+R1049 Abstract.Group <> x var
+R1053 Abstract.Group <> y var
+R1058 Abstract.Group <> y var
+R1126 Technology.FirstClassSetoid "x == y" not
+R1118 Abstract.Magma "x & y" not
+R1115 Abstract.Magma "x & y" not
+R1124 Abstract.Group "x '''" not
+R1131 Abstract.Magma "x & y" not
+R1135 Abstract.Group "x '''" not
+R1126 Technology.FirstClassSetoid "x == y" not
+R1118 Abstract.Magma "x & y" not
+R1115 Abstract.Magma "x & y" not
+R1124 Abstract.Group "x '''" not
+R1131 Abstract.Magma "x & y" not
+R1135 Abstract.Group "x '''" not
+R1186 Abstract.Semigroup <> associativity meth
+R1186 Abstract.Semigroup <> associativity meth
+R1224 Abstract.Group <> rightInverse meth
+R1224 Abstract.Group <> rightInverse meth
+R1224 Abstract.Group <> rightInverse meth
+R1254 Abstract.Monoid <> rightIdentity meth
+R1254 Abstract.Monoid <> rightIdentity meth
+prf 1301 <> group_unique_identity_right
+R1335 Abstract.Group <> Group class
+R1374 Technology.FirstClassSetoid "x == y" not
+R1372 Abstract.Group <> x var
+R1377 Abstract.Monoid <> identity meth
+R1364 Technology.FirstClassSetoid "x == y" not
+R1360 Abstract.Magma "x & y" not
+R1358 Abstract.Group <> y var
+R1362 Abstract.Group <> x var
+R1367 Abstract.Group <> y var
+R1435 Technology.FirstClassSetoid "x == y" not
+R1425 Abstract.Magma "x & y" not
+R1423 Abstract.Group "x '''" not
+R1430 Abstract.Magma "x & y" not
+R1442 Abstract.Magma "x & y" not
+R1440 Abstract.Group "x '''" not
+R1435 Technology.FirstClassSetoid "x == y" not
+R1425 Abstract.Magma "x & y" not
+R1423 Abstract.Group "x '''" not
+R1430 Abstract.Magma "x & y" not
+R1442 Abstract.Magma "x & y" not
+R1440 Abstract.Group "x '''" not
+R1492 Abstract.Semigroup <> associativity meth
+R1492 Abstract.Semigroup <> associativity meth
+R1530 Abstract.Group <> leftInverse meth
+R1530 Abstract.Group <> leftInverse meth
+R1530 Abstract.Group <> leftInverse meth
+R1559 Abstract.Monoid <> leftIdentity meth
+R1559 Abstract.Monoid <> leftIdentity meth
+prf 1605 <> group_unique_inverses
+R1633 Abstract.Group <> Group class
+R1686 Coq.Init.Logic "A /\ B" not
+R1679 Technology.FirstClassSetoid "x == y" not
+R1677 Abstract.Group <> x var
+R1684 Abstract.Group "x '''" not
+R1682 Abstract.Group <> y var
+R1691 Technology.FirstClassSetoid "x == y" not
+R1689 Abstract.Group <> y var
+R1696 Abstract.Group "x '''" not
+R1694 Abstract.Group <> x var
+R1662 Technology.FirstClassSetoid "x == y" not
+R1658 Abstract.Magma "x & y" not
+R1656 Abstract.Group <> x var
+R1660 Abstract.Group <> y var
+R1665 Abstract.Monoid <> identity meth
+R1746 Technology.FirstClassSetoid "x == y" not
+R1738 Abstract.Magma "x & y" not
+R1735 Abstract.Magma "x & y" not
+R1744 Abstract.Group "x '''" not
+R1758 Abstract.Magma "x & y" not
+R1749 Abstract.Monoid <> identity meth
+R1762 Abstract.Group "x '''" not
+R1746 Technology.FirstClassSetoid "x == y" not
+R1738 Abstract.Magma "x & y" not
+R1735 Abstract.Magma "x & y" not
+R1744 Abstract.Group "x '''" not
+R1758 Abstract.Magma "x & y" not
+R1749 Abstract.Monoid <> identity meth
+R1762 Abstract.Group "x '''" not
+R1824 Technology.FirstClassSetoid "x == y" not
+R1814 Abstract.Magma "x & y" not
+R1812 Abstract.Group "x '''" not
+R1819 Abstract.Magma "x & y" not
+R1831 Abstract.Magma "x & y" not
+R1829 Abstract.Group "x '''" not
+R1833 Abstract.Monoid <> identity meth
+R1824 Technology.FirstClassSetoid "x == y" not
+R1814 Abstract.Magma "x & y" not
+R1812 Abstract.Group "x '''" not
+R1819 Abstract.Magma "x & y" not
+R1831 Abstract.Magma "x & y" not
+R1829 Abstract.Group "x '''" not
+R1833 Abstract.Monoid <> identity meth
+R1891 Abstract.Semigroup <> associativity meth
+R1891 Abstract.Semigroup <> associativity meth
+R1922 Abstract.Semigroup <> associativity meth
+R1922 Abstract.Semigroup <> associativity meth
+R1953 Abstract.Group <> rightInverse meth
+R1953 Abstract.Group <> rightInverse meth
+R1983 Abstract.Group <> leftInverse meth
+R1983 Abstract.Group <> leftInverse meth
+R2012 Abstract.Monoid <> leftIdentity meth
+R2012 Abstract.Monoid <> leftIdentity meth
+R2042 Abstract.Monoid <> rightIdentity meth
+R2042 Abstract.Monoid <> rightIdentity meth
+R2073 Abstract.Monoid <> rightIdentity meth
+R2073 Abstract.Monoid <> rightIdentity meth
+R2104 Abstract.Monoid <> leftIdentity meth
+R2104 Abstract.Monoid <> leftIdentity meth
+prf 2157 <> group_left_cancellation
+R2187 Abstract.Group <> Group class
+R2232 Technology.FirstClassSetoid "x == y" not
+R2230 Abstract.Group <> x var
+R2235 Abstract.Group <> y var
+R2218 Technology.FirstClassSetoid "x == y" not
+R2214 Abstract.Magma "x & y" not
+R2212 Abstract.Group <> k var
+R2216 Abstract.Group <> x var
+R2223 Abstract.Magma "x & y" not
+R2221 Abstract.Group <> k var
+R2225 Abstract.Group <> y var
+R2287 Technology.FirstClassSetoid "x == y" not
+R2277 Abstract.Magma "x & y" not
+R2275 Abstract.Group "x '''" not
+R2282 Abstract.Magma "x & y" not
+R2294 Abstract.Magma "x & y" not
+R2292 Abstract.Group "x '''" not
+R2299 Abstract.Magma "x & y" not
+R2287 Technology.FirstClassSetoid "x == y" not
+R2277 Abstract.Magma "x & y" not
+R2275 Abstract.Group "x '''" not
+R2282 Abstract.Magma "x & y" not
+R2294 Abstract.Magma "x & y" not
+R2292 Abstract.Group "x '''" not
+R2299 Abstract.Magma "x & y" not
+R2357 Abstract.Semigroup <> associativity meth
+R2357 Abstract.Semigroup <> associativity meth
+R2357 Abstract.Semigroup <> associativity meth
+R2357 Abstract.Semigroup <> associativity meth
+R2395 Abstract.Group <> leftInverse meth
+R2395 Abstract.Group <> leftInverse meth
+R2395 Abstract.Group <> leftInverse meth
+R2431 Abstract.Monoid <> leftIdentity meth
+R2431 Abstract.Monoid <> leftIdentity meth
+R2431 Abstract.Monoid <> leftIdentity meth
+R2431 Abstract.Monoid <> leftIdentity meth
+prf 2477 <> group_right_cancellation
+R2508 Abstract.Group <> Group class
+R2553 Technology.FirstClassSetoid "x == y" not
+R2551 Abstract.Group <> x var
+R2556 Abstract.Group <> y var
+R2539 Technology.FirstClassSetoid "x == y" not
+R2535 Abstract.Magma "x & y" not
+R2533 Abstract.Group <> x var
+R2537 Abstract.Group <> k var
+R2544 Abstract.Magma "x & y" not
+R2542 Abstract.Group <> y var
+R2546 Abstract.Group <> k var
+R2608 Technology.FirstClassSetoid "x == y" not
+R2600 Abstract.Magma "x & y" not
+R2597 Abstract.Magma "x & y" not
+R2606 Abstract.Group "x '''" not
+R2617 Abstract.Magma "x & y" not
+R2614 Abstract.Magma "x & y" not
+R2623 Abstract.Group "x '''" not
+R2608 Technology.FirstClassSetoid "x == y" not
+R2600 Abstract.Magma "x & y" not
+R2597 Abstract.Magma "x & y" not
+R2606 Abstract.Group "x '''" not
+R2617 Abstract.Magma "x & y" not
+R2614 Abstract.Magma "x & y" not
+R2623 Abstract.Group "x '''" not
+R2681 Abstract.Semigroup <> associativity meth
+R2681 Abstract.Semigroup <> associativity meth
+R2681 Abstract.Semigroup <> associativity meth
+R2681 Abstract.Semigroup <> associativity meth
+R2719 Abstract.Group <> rightInverse meth
+R2719 Abstract.Group <> rightInverse meth
+R2719 Abstract.Group <> rightInverse meth
+R2756 Abstract.Monoid <> rightIdentity meth
+R2756 Abstract.Monoid <> rightIdentity meth
+R2756 Abstract.Monoid <> rightIdentity meth
+R2756 Abstract.Monoid <> rightIdentity meth
+prf 2805 <> group_inverse_over_product
+R2838 Abstract.Group <> Group class
+R2871 Technology.FirstClassSetoid "x == y" not
+R2867 Abstract.Group "x '''" not
+R2864 Abstract.Magma "x & y" not
+R2862 Abstract.Group <> x var
+R2866 Abstract.Group <> y var
+R2878 Abstract.Magma "x & y" not
+R2876 Abstract.Group "x '''" not
+R2874 Abstract.Group <> y var
+R2882 Abstract.Group "x '''" not
+R2880 Abstract.Group <> x var
+R2938 Technology.FirstClassSetoid "x == y" not
+R2922 Abstract.Magma "x & y" not
+R2919 Abstract.Magma "x & y" not
+R2931 Abstract.Magma "x & y" not
+R2929 Abstract.Group "x '''" not
+R2935 Abstract.Group "x '''" not
+R2941 Abstract.Monoid <> identity meth
+R2938 Technology.FirstClassSetoid "x == y" not
+R2922 Abstract.Magma "x & y" not
+R2919 Abstract.Magma "x & y" not
+R2931 Abstract.Magma "x & y" not
+R2929 Abstract.Group "x '''" not
+R2935 Abstract.Group "x '''" not
+R2941 Abstract.Monoid <> identity meth
+R2989 Technology.FirstClassSetoid "x == y" not
+R2973 Abstract.Magma "x & y" not
+R2970 Abstract.Magma "x & y" not
+R2982 Abstract.Magma "x & y" not
+R2980 Abstract.Group "x '''" not
+R2986 Abstract.Group "x '''" not
+R3006 Abstract.Magma "x & y" not
+R2994 Abstract.Magma "x & y" not
+R2999 Abstract.Magma "x & y" not
+R3003 Abstract.Group "x '''" not
+R3010 Abstract.Group "x '''" not
+R3037 Abstract.Semigroup <> associativity meth
+R2989 Technology.FirstClassSetoid "x == y" not
+R2973 Abstract.Magma "x & y" not
+R2970 Abstract.Magma "x & y" not
+R2982 Abstract.Magma "x & y" not
+R2980 Abstract.Group "x '''" not
+R2986 Abstract.Group "x '''" not
+R3006 Abstract.Magma "x & y" not
+R2994 Abstract.Magma "x & y" not
+R2999 Abstract.Magma "x & y" not
+R3003 Abstract.Group "x '''" not
+R3010 Abstract.Group "x '''" not
+R3037 Abstract.Semigroup <> associativity meth
+R3037 Abstract.Semigroup <> associativity meth
+R3037 Abstract.Semigroup <> associativity meth
+R3089 Abstract.Group <> rightInverse meth
+R3089 Abstract.Group <> rightInverse meth
+R3113 Abstract.Monoid <> rightIdentity meth
+R3113 Abstract.Monoid <> rightIdentity meth
+R3138 Abstract.Group <> rightInverse meth
+R3138 Abstract.Group <> rightInverse meth
+R3179 Abstract.Group <> group_unique_inverses thm
+R3179 Abstract.Group <> group_unique_inverses thm
+prf 3249 <> group_inverse_inverse
+R3277 Abstract.Group <> Group class
+R3304 Technology.FirstClassSetoid "x == y" not
+R3302 Abstract.Group "x '''" not
+R3300 Abstract.Group "x '''" not
+R3298 Abstract.Group <> a var
+R3307 Abstract.Group <> a var
+R3344 Technology.FirstClassSetoid "x == y" not
+R3340 Abstract.Magma "x & y" not
+R3338 Abstract.Group "x '''" not
+R3347 Abstract.Monoid <> identity meth
+R3371 Abstract.Group <> leftInverse meth
+R3344 Technology.FirstClassSetoid "x == y" not
+R3340 Abstract.Magma "x & y" not
+R3338 Abstract.Group "x '''" not
+R3347 Abstract.Monoid <> identity meth
+R3371 Abstract.Group <> leftInverse meth
+R3396 Abstract.Group <> group_unique_inverses thm
+R3396 Abstract.Group <> group_unique_inverses thm

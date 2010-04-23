@@ -1,0 +1,6 @@
+
+Class Integral `(R : Ring) := {
+  nonDegernerate : one # zero ;
+  noZeroDivisors : forall a b,
+    a * b == zero -> a == zero \/ b == zero
+}.

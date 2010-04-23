@@ -1,0 +1,45 @@
+FAbstract.Field
+R17 Technology.FirstClassSetoid <> <> lib
+R47 Technology.Tag <> <> lib
+R64 Abstract.Magma <> <> lib
+R81 Abstract.Monoid <> <> lib
+R99 Abstract.Abelian <> <> lib
+R118 Abstract.Ring <> <> lib
+rec 238 <> Field
+proj 325 <> nonDegernerate'
+proj 358 <> reciprocal
+proj 399 <> reciprocalLeftInverse
+proj 486 <> reciprocalRightInverse
+R252 Abstract.Ring <> Ring class
+R257 Abstract.Field <> S var
+R272 Abstract.Abelian <> Abelian class
+R284 Abstract.Field <> Add var
+R301 Abstract.Abelian <> Abelian class
+R313 Abstract.Field <> Mul var
+R347 Technology.FirstClassSetoid "x # y" not
+R343 Abstract.Monoid "'one'" not
+R349 Abstract.Monoid "'zero'" not
+R393 Abstract.Field <> S var
+R383 Technology.FirstClassSetoid "x # y" not
+R381 Abstract.Field <> a var
+R385 Abstract.Monoid "'zero'" not
+R475 Technology.FirstClassSetoid "x == y" not
+R471 Abstract.Magma "x * y" not
+R454 Abstract.Field <> reciprocal meth
+R467 Abstract.Field <> prf var
+R465 Abstract.Field <> a var
+R473 Abstract.Field <> a var
+R478 Abstract.Monoid "'one'" not
+R441 Technology.FirstClassSetoid "x # y" not
+R439 Abstract.Field <> a var
+R443 Abstract.Monoid "'zero'" not
+R563 Technology.FirstClassSetoid "x == y" not
+R544 Abstract.Magma "x * y" not
+R542 Abstract.Field <> a var
+R546 Abstract.Field <> reciprocal meth
+R559 Abstract.Field <> prf var
+R557 Abstract.Field <> a var
+R566 Abstract.Monoid "'one'" not
+R529 Technology.FirstClassSetoid "x # y" not
+R527 Abstract.Field <> a var
+R531 Abstract.Monoid "'zero'" not

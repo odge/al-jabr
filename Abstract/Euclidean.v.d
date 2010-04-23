@@ -1,0 +1,1 @@
+Abstract/Euclidean.vo Abstract/Euclidean.glob: Abstract/Euclidean.v Technology/FirstClassSetoid.vo Technology/Tag.vo Abstract/Magma.vo Abstract/Semigroup.vo Abstract/Monoid.vo Abstract/Group.vo Abstract/Ring.vo Abstract/Integral.vo Concrete/N.vo

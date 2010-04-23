@@ -1,0 +1,18 @@
+FAbstract.Semigroup
+R17 Technology.FirstClassSetoid <> <> lib
+R47 Technology.Tag <> <> lib
+R64 Abstract.Magma <> <> lib
+rec 185 <> Semigroup
+proj 215 <> associativity
+R201 Abstract.Magma <> Magma class
+R261 Technology.FirstClassSetoid "x == y" not
+R251 Abstract.Magma "x & y" not
+R249 Abstract.Semigroup <> a var
+R256 Abstract.Magma "x & y" not
+R254 Abstract.Semigroup <> b var
+R258 Abstract.Semigroup <> c var
+R270 Abstract.Magma "x & y" not
+R267 Abstract.Magma "x & y" not
+R265 Abstract.Semigroup <> a var
+R269 Abstract.Semigroup <> b var
+R274 Abstract.Semigroup <> c var
